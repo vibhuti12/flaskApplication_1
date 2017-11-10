@@ -1,2 +1,11 @@
+import os
 SECRET_KEY = 'SOMERNDOMKEY'
 DEBUG = True
+
+DB_USERNAME = 'vtripat3'
+DB_PASSWORD = ''
+DB_NAME = 'blog'
+DB_HOST = os.getenv('IP','0.0.0.0')
+DB_URI  = "mysql+pymysql://%s:%s@%s/%s" %(DB_USERNAME,DB_PASSWORD, DB_HOST, DB_NAME)
+SQLALCHEMY_DATABASE_URI = DB_URI
+SQLALCHEMY_TRACK_MODIFICATIONS = True
